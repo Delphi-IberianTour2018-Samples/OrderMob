@@ -1,0 +1,4 @@
+id,lockid,code,name,nif,street,zipcode,city,state,country,email,phone,created_at,updated_at
+1,13,0001,Danysoft S. L.,111111,Calle 1,,,,,,,2017-06-15 19:01:01.370,2018-06-06 19:13:01.750
+2,7,0002,Aledit S. L.,222222,Calle 2,,,,,,,2017-06-16 10:13:37.521,2018-06-06 19:13:10.188
+3,3,003,ACME Limited,333333,Calle 3,,,,,,,2017-09-27 13:27:21.986,2018-06-06 19:13:22.394

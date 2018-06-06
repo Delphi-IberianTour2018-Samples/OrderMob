@@ -1,0 +1,257 @@
+object MainForm: TMainForm
+  Left = 0
+  Top = 0
+  Caption = 'HeaderFooter'
+  ClientHeight = 567
+  ClientWidth = 427
+  Position = MainFormCenter
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TopToolBar: TToolBar
+    Anchors = []
+    Size.Width = 427.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBarLabel: TLabel
+      Action = TitleAction
+      Align = Contents
+      Enabled = True
+      Size.Width = 427.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+    end
+    object btnBack: TSpeedButton
+      Action = PreviousTabAction1
+      Align = MostLeft
+      Enabled = True
+      ImageIndex = -1
+      Size.Width = 65.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+    end
+    object btnNext: TSpeedButton
+      Action = NextTabAction1
+      Align = MostRight
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 383.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'nexttoolbutton'
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 427.000000000000000000
+    Size.Height = 479.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 1
+    TabPosition = None
+    Sizes = (
+      427s
+      479s
+      427s
+      479s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = '0001'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object ListView1: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        ItemIndex = 0
+        Align = Client
+        Size.Width = 427.000000000000000000
+        Size.Height = 479.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnItemClick = ListView1ItemClick
+        ControlType = Platform
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Text = '0001'
+        Position.X = 40.000000000000000000
+        Position.Y = 40.000000000000000000
+      end
+      object Edit2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Text = 'DAN-0001'
+        Position.X = 216.000000000000000000
+        Position.Y = 40.000000000000000000
+      end
+      object Edit3: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Text = '400'
+        TextSettings.HorzAlign = Trailing
+        Position.X = 216.000000000000000000
+        Position.Y = 80.000000000000000000
+      end
+      object StringGrid1: TStringGrid
+        Align = Bottom
+        CanFocus = True
+        ClipChildren = True
+        Position.Y = 224.000000000000000000
+        Size.Width = 427.000000000000000000
+        Size.Height = 255.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        RowCount = 1
+        Viewport.Width = 423.000000000000000000
+        Viewport.Height = 230.000000000000000000
+      end
+    end
+  end
+  object BottomToolBar: TToolBar
+    Align = Bottom
+    Anchors = [akLeft]
+    Position.Y = 523.000000000000000000
+    Size.Width = 427.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 2
+  end
+  object ActionList1: TActionList
+    Left = 184
+    Top = 176
+    object TitleAction: TControlAction
+      Category = 'Tab'
+      Text = 'TitleAction'
+      OnUpdate = TitleActionUpdate
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+      ShortCut = 137
+    end
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+  object OrdersBindSource: TBindSourceDB
+    DataSet = DataModule1.OrderData
+    ScopeMappings = <>
+    Left = 88
+    Top = 308
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 165
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = OrdersBindSource
+      FieldName = 'number'
+      Control = Edit1
+      Track = False
+    end
+    object LinkControlToField2: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = OrdersBindSource
+      FieldName = 'reference'
+      Control = Edit2
+      Track = False
+    end
+    object LinkControlToField3: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = OrdersBindSource
+      FieldName = 'total'
+      Control = Edit3
+      Track = False
+    end
+    object LinkGridToDataSourceOrderItemsBindSource: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = OrderItemsBindSource
+      GridControl = StringGrid1
+      Columns = <
+        item
+          MemberName = 'quantity'
+        end
+        item
+          MemberName = 'price'
+        end
+        item
+          MemberName = 'total'
+        end
+        item
+          MemberName = 'created_at'
+        end
+        item
+          MemberName = 'updated_at'
+        end>
+    end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = OrdersBindSource
+      FieldName = 'number'
+      Component = TabItem1
+      ComponentProperty = 'Text'
+    end
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = OrdersBindSource
+      FieldName = 'number'
+      Control = ListView1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object BindExpression1: TBindExpression
+      Category = 'Binding Expressions'
+      ControlComponent = TabItem2
+      SourceComponent = OrdersBindSource
+      SourceExpression = 'number.text + '#39' / '#39' + reference.Text'
+      ControlExpression = 'Text'
+      NotifyOutputs = True
+      Direction = dirSourceToControl
+    end
+  end
+  object OrderItemsBindSource: TBindSourceDB
+    DataSet = DataModule1.OrderItemData
+    ScopeMappings = <>
+    Left = 224
+    Top = 328
+  end
+end

@@ -1,0 +1,24 @@
+inherited MainForm_Windows: TMainForm_Windows
+  DesignerMasterStyle = 0
+  inherited BottomToolBar: TToolBar [1]
+  end
+  inherited TabControl1: TTabControl [2]
+    Sizes = (
+      427s
+      479s
+      427s
+      479s)
+    inherited TabItem1: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+    end
+    inherited TabItem2: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited StringGrid1: TStringGrid
+        Viewport.Width = 427.000000000000000000
+        Viewport.Height = 255.000000000000000000
+      end
+    end
+  end
+end

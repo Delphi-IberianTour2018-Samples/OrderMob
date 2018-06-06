@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3057D332-5A67-45C7-A9C4-D69025F0E443}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="OrderMobApp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OrderMobApp">
+        <MSBuild Projects="OrderMobApp.dproj"/>
+    </Target>
+    <Target Name="OrderMobApp:Clean">
+        <MSBuild Projects="OrderMobApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OrderMobApp:Make">
+        <MSBuild Projects="OrderMobApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OrderMobApp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OrderMobApp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OrderMobApp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
