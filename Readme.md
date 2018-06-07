@@ -1,3 +1,3 @@
 # OrderMob app
 
-Una vez compilado, para ejecutar, la bd Data\MiniGest.sdb debe copiarse a out\AppdataPath
+Ejemplo de BD con maestro detalle para dispositivo móvil.

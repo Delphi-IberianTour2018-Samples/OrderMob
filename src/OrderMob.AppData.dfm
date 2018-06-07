@@ -10,14 +10,12 @@ object AppData: TAppData
         '\OrdersMob\out\Win32\Debug\bin\Data\MiniGest.sdb'
       'DriverID=SQLite')
     ConnectedStoredUsage = [auDesignTime]
-    Connected = True
     LoginPrompt = False
     Left = 72
     Top = 80
   end
   object OrderData: TFDTable
     ActiveStoredUsage = [auDesignTime]
-    Active = True
     IndexFieldNames = 'id'
     Connection = DataConnection
     UpdateOptions.UpdateTableName = 'orders'
@@ -75,7 +73,6 @@ object AppData: TAppData
   end
   object OrderItemData: TFDTable
     ActiveStoredUsage = [auDesignTime]
-    Active = True
     IndexFieldNames = 'order_id'
     MasterSource = OrdersSource
     MasterFields = 'id'
@@ -138,5 +135,10 @@ object AppData: TAppData
     DataSet = OrderData
     Left = 176
     Top = 80
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 176
+    Top = 168
   end
 end

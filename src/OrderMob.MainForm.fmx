@@ -81,7 +81,6 @@ object MainForm: TMainForm
         ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
         HeaderAppearanceClassName = 'TListHeaderObjects'
         FooterAppearanceClassName = 'TListHeaderObjects'
-        ItemIndex = 0
         Align = Client
         Size.Width = 427.000000000000000000
         Size.Height = 479.000000000000000000
@@ -170,7 +169,7 @@ object MainForm: TMainForm
     end
   end
   object OrdersBindSource: TBindSourceDB
-    DataSet = DataModule1.OrderData
+    DataSet = AppData.OrderData
     ScopeMappings = <>
     Left = 88
     Top = 308
@@ -249,7 +248,7 @@ object MainForm: TMainForm
     end
   end
   object OrderItemsBindSource: TBindSourceDB
-    DataSet = DataModule1.OrderItemData
+    DataSet = AppData.OrderItemData
     ScopeMappings = <>
     Left = 224
     Top = 328
