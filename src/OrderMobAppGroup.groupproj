@@ -33,4 +33,20 @@
         <CallTarget Targets="OrderMobApp:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Ship'">
+        <BuildGroupProject Include="OrderMobApp.dproj">
+            <ProjectGuid>{22CD5384-D683-4779-9F28-127AD8AEDA70}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android;Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Debug'">
+        <BuildGroupProject Include="OrderMobApp.dproj">
+            <ProjectGuid>{22CD5384-D683-4779-9F28-127AD8AEDA70}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Android;Win32</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
 </Project>
