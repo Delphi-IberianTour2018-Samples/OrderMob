@@ -6,22 +6,24 @@ object AppData: TAppData
   object DataConnection: TFDConnection
     Params.Strings = (
       
-        'Database=Z:\Documents\Projects\Work\Danysoft\DIBTour2018\Samples' +
-        '\OrdersMob\out\Win32\Debug\bin\Data\MiniGest.sdb'
+        'Database=Z:\Documents\Projects\Work\Danysoft\DIBTour2018\OrdersM' +
+        'ob\Data\MiniGest.sdb'
       'DriverID=SQLite')
     ConnectedStoredUsage = [auDesignTime]
+    Connected = True
     LoginPrompt = False
     Left = 72
     Top = 80
   end
   object OrderData: TFDTable
     ActiveStoredUsage = [auDesignTime]
+    Active = True
     IndexFieldNames = 'id'
     Connection = DataConnection
     UpdateOptions.UpdateTableName = 'orders'
     TableName = 'orders'
-    Left = 88
-    Top = 141
+    Left = 104
+    Top = 165
     object OrderDataid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -79,8 +81,8 @@ object AppData: TAppData
     Connection = DataConnection
     UpdateOptions.UpdateTableName = 'order_items'
     TableName = 'order_items'
-    Left = 272
-    Top = 85
+    Left = 256
+    Top = 157
     object OrderItemDataid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
@@ -134,11 +136,11 @@ object AppData: TAppData
   object OrdersSource: TDataSource
     DataSet = OrderData
     Left = 176
-    Top = 80
+    Top = 112
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'FMX'
-    Left = 176
-    Top = 168
+    Left = 216
+    Top = 24
   end
 end
